@@ -11,6 +11,7 @@ import java.util.Scanner;
 import javax.xml.transform.Templates;
 
 public class Season {
+	//attributes
 	private String name; // tên
 	private String temprature; // nhiệt độ
 	private String weather; // thời tiết 
@@ -18,6 +19,7 @@ public class Season {
 	private String activity; // hoạt động
 	private String holiday; // ngày lễ
 	
+	//constructor all attributes
 	public Season(String name, String temprature, String weather, String landscape, String activity, String holiday) {
 		this.name = name;
 		this.temprature = temprature;
@@ -27,12 +29,12 @@ public class Season {
 		this.holiday = holiday;
 	}
 	
-	
+	//constructor
 	public Season() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	//get&set
 	public String getName() {
 		return name;
 	}
@@ -70,6 +72,7 @@ public class Season {
 		this.holiday = holiday;
 	}
 
+	//setall
 	public void setall(String name, String temprature, String weather, String landscape, String activity, String holiday) {
 		this.name = name;
 		this.temprature = temprature;
@@ -79,6 +82,7 @@ public class Season {
 		this.holiday = holiday;
 	}
 	
+	//input
 	public void inputSeason() {
 		Scanner sc = new Scanner(System.in);
 		
@@ -102,6 +106,7 @@ public class Season {
 		
 	}
 	
+	//output
 	public void outputSeason() {
 		System.out.println("Name Season: " + getName());
 		
@@ -116,6 +121,7 @@ public class Season {
 		System.out.println("Holiday Season: " + getHoliday());
 	}
 	
+	//input file
 	public static ArrayList<Season> inputFile(){
 		ArrayList<Season> list = new ArrayList<Season>();
 		try {
@@ -137,6 +143,7 @@ public class Season {
 		return list;
 	}
 	
+	//output file
 	public void outputFile(ArrayList<Season> list) {
 		try {
 			FileWriter fWriter = new FileWriter("C:\\Users\\Admin\\Desktop\\lib java\\Java\\Season1.txt");
@@ -152,6 +159,7 @@ public class Season {
 		}
 	}
 	
+	//output monitor
 	public void outputMonitor() {
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Season> list = new ArrayList<Season>();
@@ -187,6 +195,7 @@ public class Season {
 		}
 	}
 	
+	//main
 	public static void main(String[] args) {
 		Season season = new Season();
 		season.outputMonitor();
