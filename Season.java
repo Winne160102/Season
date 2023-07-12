@@ -4,11 +4,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import javax.xml.transform.Templates;
 
 public class Season {
 	//attributes
@@ -159,6 +156,24 @@ public class Season {
 		}
 	}
 	
+	//output file from keyboard
+	public void outputFromKeyboard() {
+		ArrayList<Season> list = new ArrayList<Season>();
+		inputSeason();
+		list.add(this);
+		try {
+			FileWriter fWriter = new FileWriter("C:\\Users\\Admin\\Desktop\\lib java\\Java\\Season1.txt");
+			BufferedWriter bWriter = new BufferedWriter(fWriter);
+			for(Season data : list) {
+				bWriter.write(data.getName() + ";" + data.getTemprature() + ";" + data.getWeather() + ";" + data.getLandscape() + ";" + data.getActivity() + ";" + data.getHoliday());
+				bWriter.newLine();
+			}
+			bWriter.close();
+			fWriter.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	//output monitor
 	public void outputMonitor() {
 		Scanner sc = new Scanner(System.in);
@@ -187,6 +202,10 @@ public class Season {
 			case 4:
 				exit = true;
 				System.out.println("Program has been closed.");
+				break;
+				
+			case 5:
+				outputFromKeyboard();
 				break;
 			default:
 				System.out.println("Invalid Choice!");
